@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!--Author: Nathaniel Schiraldi
+        Student Number: 000855552
+        File Created: February 26, 2022
+        Description: Fourth Assignment creating a simple dice rolling game. Allowing for user interaction of game difficulty, and guessing dice sum.-->
+
+    <!--Photo URLS:
+        Dice 1: https://commons.wikimedia.org/wiki/File:Dice-1-b.svg
+        Dice 2: https://commons.wikimedia.org/wiki/File:Dice-2-b.svg
+        Dice 3: https://commons.wikimedia.org/wiki/File:Dice-3-b.svg
+        Dice 4: https://commons.wikimedia.org/wiki/File:Dice-4-b.svg
+        Dice 5: https://commons.wikimedia.org/wiki/File:Dice-5-b.svg        
+        Dice 6: https://commons.wikimedia.org/wiki/File:Dice-6-b.svg
+        Addition Sign: https://favpng.com/png_view/patient-icon-addition-sign-clip-art-png/wfChp3JV 
+        Equal Sign: https://www.pngwing.com/en/free-png-yquul-->    
+
+    <title>Assignment #4 Nathaniel Schiraldi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="dicegame.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+        rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+        crossorigin="anonymous">
+    <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <header>
+        <h1 class="text-center text-white pt-3">COMP 10259 Assignment 4 - Dice Rolling Game</h1>
+        <h2 class="text-center mb-0 pb-4 text-white">Created by: Nathaniel Schiraldi, 000855552</h2>
+    </header>
+
+    <main>  
+        <div class="gameinfo">
+            <h4 class="text-center pt-2 pb-2">Dice Rolling Game Description:</h4>
+            <p class="text-center">You will be asked to choose a username with only letters, a length of 4 to 8 characters, and it must be in ascending order.</p> <!--I will automatically change the first letter to an uppercase letter.-->
+            <p class="text-center">You will be asked to choose a difficulty level, either easy, medium, or hard.</p>
+            <p class="text-center">You will be asked to roll two dices! Their values will be added to form a total. Your selection of difficulty determines your destiny of winning or losing!</p>
+            <p class="text-center">However, there is one saving grace. If you manage to guess the exact total produced from the two dice you will win automatically. This rule supersedes all other difficulty rules.</p>
+            <p class="text-center"><span>Easy</span>: 6-12 (inclusive) = <span>Win</span> // 2-5 (inclusive) = <span>Defeat</span></p>
+            <p class="text-center"><span>Medium</span>: 8-12 (inclusive) = <span>Win</span> // 2-7 (inclusive) = <span>Defeat</span></p>
+            <p class="text-center"><span>Hard</span>: 10-12 (inclusive) = <span>Win</span> // 2-9 (inclusive) = <span>Defeat</span></p>
+            <p class="text-center">If User Prediction = Total ===> <span>Undisputed Win!!!</span></p>
+        </div>
+
+        <div class="forminfo">
+            <form id="gameform">
+                <h4 class="text-center pt-4 pb-2">User Selection:</h4>
+                
+                <div class="text-center error1"></div>
+
+                <div class="pb-3 text-center">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" placeholder="Abcde" maxlength="8" required>
+                </div>
+                
+                <div class="text-center error2"></div>
+
+                <div class="pb-3 text-center">
+                    <input type="radio" class="difficulty" name="difficulty" id="easy" value="1">
+                    <label for="easy">Easy</label>
+            
+                    <input type="radio" class="difficulty" name="difficulty" id="medium" value="2">
+                    <label for="medium">Medium</label>
+
+                    <input type="radio" class="difficulty" name="difficulty" id="hard" value="3">
+                    <label for="hard">Hard</label>
+                </div>
+                
+                <div class="text-center error3"></div>
+
+                <div class="text-center pb-3 totalprediction">
+                    <label for="predicttotal">Predict Total (2-12):</label>
+                    <input type="number" id="predicttotal" min="2" max="12">
+                </div>
+
+                <div class="text-center helpmessage"></div>
+
+                <div class="pb-3 text-center gamebuttons">
+                    <button class="btn btn-info btn-outline-dark startgame" type="submit">Start Game</button>
+                    <button class="btn btn-info btn-outline-dark rolldice" type="button">Roll Dice</button>
+                    <button class="btn btn-info btn-outline-dark help" type="button">Help</button>
+                    <button class="btn btn-info btn-outline-dark reset" type="button">Reset</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="text-center winlosscounter"></div>
+
+        <div id="showsum" class="dicerolling"></div>
+
+        <div class="text-center victorydefeatmessage pt-2"></div>
+
+    </main>
+
+    <footer> 
+        <p class="text-center text-white pt-4 pb-3">&copy; 2022, Nathaniel Schiraldi, Mohawk College</p>
+    </footer>
+
+</body>
+
+</html>

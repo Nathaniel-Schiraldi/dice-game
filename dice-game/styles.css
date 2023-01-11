@@ -1,0 +1,51 @@
+/*Author: Nathaniel Schiraldi
+Student Number: 000855552
+File Created: February 26, 2022
+Description: Styles used to provide appropriate characteristics to the dice rolling game on the index.html webpage.*/
+
+body {
+    background-color: #FDF5DF;
+    font-family: Tahoma, sans-serif;
+}
+
+header, footer {
+    background-color: #A0AECD;
+    border-bottom: solid 3px white;
+}
+
+main {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+span {
+    font-weight: bold;
+}
+
+/*For the inital game state, user prediction and the following buttons will not be displayed on the screen.*/
+#gameform .totalprediction, #gameform .gamebuttons .help,  #gameform .gamebuttons .rolldice, #gameform .gamebuttons .reset {
+    display: none;
+}
+
+.dicerolling {
+    display: inline;
+}
+
+.rightmargin {
+    margin-right: 10px;
+}
+
+.leftmargin {
+    margin-left: 10px;
+}
+
+.textcenter {
+    text-align: center;
+}
+
+#showsum .bigFont {
+    font-size: 20px;
+}
+
+footer {
+    border-top: solid 3px white;
+}
